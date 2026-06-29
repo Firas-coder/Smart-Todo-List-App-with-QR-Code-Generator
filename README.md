@@ -19,7 +19,7 @@ A smart, fully functional daily task management web application built using the 
 * **Backend:** Python 3.x, Django Web Framework
 * **Database:** SQLite (Development environment)
 * **Libraries:** `qrcode`, `Pillow` (for advanced image processing)
-* **Frontend:** HTML5, CSS3, Bootstrap 5
+* **Frontend:** HTML
 
 ---
 
