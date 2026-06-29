@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Edit Task{% endblock %}
+{% block content %}
+<form action="" method="POST" class="form-group">
+{% csrf_token %}
+    <label for="titlehtml" class="form-label">Title</label>
+    <input id="titlehtml" name="titlehtml" class="form-control" type="text" value="{{ edit_task_key.title }}">
+    <label for="descriptionhtml" class="form-label">Description</label>
+    <textarea id="descriptionhtml" name="descriptionhtml" class="form-control">{{ edit_task_key.description }}</textarea>
+    <label for="statushtml" class="form-label">Status</label>
+    <select id="statushtml" name="statushtml" class="form-control">
+        <option value="pending" {% if edit_task_key.status == "pending" %}selected{% endif %}>Pending</option>
+        <option value="in_progress" {% if edit_task_key.status == "in_progress" %}selected{% endif %}>In Progress</option>
+        <option value="completed" {% if edit_task_key.status == "completed" %}selected{% endif %}>Completed</option>
+    </select>
+    <label for="date_completedhtml" class="form-label">Date Completed</label>
+    <input id="date_completedhtml" name="date_completedhtml" class="form-control" type="date" value="{{ edit_task_key.date_completed }}">
+    <input class="form-control mt-4 bg-secondary text-light" type="submit" value="Update Task">
+    </form>
+{% endblock %}

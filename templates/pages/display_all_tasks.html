@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Display All Tasks{% endblock %}
+{% block content %}
+    <h1>My Tasks</h1>
+    <ul>
+        {% for task in all_tasks_key %}
+            <li>
+                <h3>{{ task.title }}</h3>
+                <p>{{ task.description }}</p>
+                <p>Status: {{ task.status }}</p>
+                <p>Date Completed: {{ task.date_completed }}</p>
+                <a href="{% url 'qr_code' task.id %}">View QR Code</a>
+            </li>
+            <a href="{% url 'edit_task' task.id %}">Edit Task</a>
+            <a href="{% url 'delete_task' task.id %}">Delete Task</a>
+        {% endfor %}
+    </ul>
+{% endblock %}

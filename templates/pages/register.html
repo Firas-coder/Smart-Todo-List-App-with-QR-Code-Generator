@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Register Page{% endblock %}
+{% block content %}
+<form action="" method="POST" class="form-group">
+    {% csrf_token %} {{form_reg_key.as_p}}
+    <input class="form-control mt-4 bg-secondary text-light" type="submit" value="Register">
+</form>
+{% endblock %}

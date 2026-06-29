@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Delete Task{% endblock %}
+{% block content %}
+    <h1>Delete Task</h1>
+    <p>Are you sure you want to delete this task?</p>
+    <form action="" method="POST" class="form-group">
+        {% csrf_token %}
+        <a href="{% url 'display_all_tasks' %}" class="btn btn-secondary mt-2">Cancel Delete</a>
+        <input class="form-control mt-4 bg-danger text-light" type="submit" value="Delete Task">
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}QR Code{% endblock %}
+{% block content %}
+    <h1>QR Code</h1>
+    {% if qr_code_key.barcode %}
+        <p>Scan the QR code below to view the task details:</p>
+        <img src="{{ qr_code_key.barcode.url }}" alt="QR Code">
+        <button class="print-btn" onclick="window.print()">🖨️Print</button>
+    {% else %}
+        <p>No QR code available for this task.</p>  
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="navbar">
+        <div class="navbar-right">
+            <a href="{% url 'home' %}">home</a>
+                👤 {{ request.user }}
+            <a class="nav-link text-danger" href="{% url 'logout' %}">Logout</a>
+         </div>
+</div>
+
+{% block content %}
+       
+{% endblock %}
